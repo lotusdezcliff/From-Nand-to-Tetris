@@ -12,4 +12,11 @@ CHIP DMux {
 
     PARTS:
     //// Replace this comment with your code.
+    Nand(a=sel, b=sel, out=nots);
+    Nand(a=nots, b=in, out=nandnotsi);
+    Nand(a=nandnotsi, b=nandnotsi, out=a);
+    Nand(a=sel, b=in, out=nandsi);
+    Nand(a=nandsi, b=nandsi, out=b);
 }
+//not sel and in = A
+//sel and in = B
