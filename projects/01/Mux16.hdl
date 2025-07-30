@@ -12,4 +12,54 @@ CHIP Mux16 {
 
     PARTS:
     //// Replace this comment with your code.
+    Nand(a=sel, b=sel, out=nots);
+    Nand(a=a[0], b=nots, out=nandanots0);
+    Nand(a=a[1], b=nots, out=nandanots1);
+    Nand(a=a[2], b=nots, out=nandanots2);
+    Nand(a=a[3], b=nots, out=nandanots3);
+    Nand(a=a[4], b=nots, out=nandanots4);
+    Nand(a=a[5], b=nots, out=nandanots5);
+    Nand(a=a[6], b=nots, out=nandanots6);
+    Nand(a=a[7], b=nots, out=nandanots7);
+    Nand(a=a[8], b=nots, out=nandanots8);
+    Nand(a=a[9], b=nots, out=nandanots9);
+    Nand(a=a[10], b=nots, out=nandanots10);
+    Nand(a=a[11], b=nots, out=nandanots11);
+    Nand(a=a[12], b=nots, out=nandanots12);
+    Nand(a=a[13], b=nots, out=nandanots13);
+    Nand(a=a[14], b=nots, out=nandanots14);
+    Nand(a=a[15], b=nots, out=nandanots15);
+    Nand(a=b[0], b=sel, out=nandbs0);
+    Nand(a=b[1], b=sel, out=nandbs1);
+    Nand(a=b[2], b=sel, out=nandbs2);
+    Nand(a=b[3], b=sel, out=nandbs3);
+    Nand(a=b[4], b=sel, out=nandbs4);
+    Nand(a=b[5], b=sel, out=nandbs5);
+    Nand(a=b[6], b=sel, out=nandbs6);
+    Nand(a=b[7], b=sel, out=nandbs7);
+    Nand(a=b[8], b=sel, out=nandbs8);
+    Nand(a=b[9], b=sel, out=nandbs9);
+    Nand(a=b[10], b=sel, out=nandbs10);
+    Nand(a=b[11], b=sel, out=nandbs11);
+    Nand(a=b[12], b=sel, out=nandbs12);
+    Nand(a=b[13], b=sel, out=nandbs13);
+    Nand(a=b[14], b=sel, out=nandbs14);
+    Nand(a=b[15], b=sel, out=nandbs15);
+    Nand(a=nandanots0, b=nandbs0, out=out[0]);
+    Nand(a=nandanots1, b=nandbs1, out=out[1]);
+    Nand(a=nandanots2, b=nandbs2, out=out[2]);
+    Nand(a=nandanots3, b=nandbs3, out=out[3]);
+    Nand(a=nandanots4, b=nandbs4, out=out[4]);
+    Nand(a=nandanots5, b=nandbs5, out=out[5]);
+    Nand(a=nandanots6, b=nandbs6, out=out[6]);
+    Nand(a=nandanots7, b=nandbs7, out=out[7]);
+    Nand(a=nandanots8, b=nandbs8, out=out[8]);
+    Nand(a=nandanots9, b=nandbs9, out=out[9]);
+    Nand(a=nandanots10, b=nandbs10, out=out[10]);
+    Nand(a=nandanots11, b=nandbs11, out=out[11]);
+    Nand(a=nandanots12, b=nandbs12, out=out[12]);
+    Nand(a=nandanots13, b=nandbs13, out=out[13]);
+    Nand(a=nandanots14, b=nandbs14, out=out[14]);
+    Nand(a=nandanots15, b=nandbs15, out=out[15]);
 }
+//(a and not sel) or (b and sel) => nand(nand(a,nots), nand(b,s))
