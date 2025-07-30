@@ -12,4 +12,28 @@ CHIP Or8Way {
 
     PARTS:
     //// Replace this comment with your code.
+    Nand(a=in[0], b=in[0], out=not0);
+    Nand(a=in[1], b=in[1], out=not1);
+    Nand(a=in[2], b=in[2], out=not2);
+    Nand(a=in[3], b=in[3], out=not3);
+    Nand(a=in[4], b=in[4], out=not4);
+    Nand(a=in[5], b=in[5], out=not5);
+    Nand(a=in[6], b=in[6], out=not6);
+    Nand(a=in[7], b=in[7], out=not7);
+    Nand(a=not0, b=not1, out=nand01);
+    Nand(a=not2, b=not3, out=nand23);
+    Nand(a=not4, b=not5, out=nand45);
+    Nand(a=not6, b=not7, out=nand67);
+    Nand(a=nand01, b=nand01, out=nnand01);
+    Nand(a=nand23, b=nand23, out=nnand23);
+    Nand(a=nand45, b=nand45, out=nnand45);
+    Nand(a=nand67, b=nand67, out=nnand67);
+    Nand(a=nnand01, b=nnand23, out=nnnand0123);
+    Nand(a=nnand45, b=nnand67, out=nnnand4567);
+    Nand(a=nnnand0123, b=nnnand0123, out=notnnnand0123);
+    Nand(a=nnnand4567, b=nnnand4567, out=notnnnand4567);
+    Nand(a=notnnnand0123, b=notnnnand4567, out=out);
 }
+// a or b or c or d .... => not (not a and not b) or not (not c and not d) ...
+// nand(not a, not b) or nand(not c, not d) or ... => not (not nand(not a, not b) and not nand(not c, not d))
+// nand(nand(nand(nota,notb)), nand(nand(notc, notd)))
