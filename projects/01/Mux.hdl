@@ -12,4 +12,11 @@ CHIP Mux {
 
     PARTS:
     //// Replace this comment with your code.
+    Nand(a=sel, b=sel, out=nots);
+    Nand(a=a, b=nots, out=nandanots);
+    Nand(a=b, b=sel, out=nandbs);
+    Nand(a=nandanots, b=nandbs, out=out);
+    
 }
+
+//(a and not sel) or (b and sel)
