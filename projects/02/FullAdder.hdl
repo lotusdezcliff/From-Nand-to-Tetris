@@ -12,4 +12,6 @@ CHIP FullAdder {
 
     PARTS:
     //// Replace this comment with your code.
+    // combine two half adders to complete
+    
 }
